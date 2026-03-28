@@ -1,2 +1,1 @@
 # Inventario_esthercita
-prueba
