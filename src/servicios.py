@@ -9,7 +9,10 @@ def mostrar_inventario(inventario):
         print("Inventario vacío")
         return
     for p in inventario:
+        print("-" * 50)
         print(f"Nombre: {p['nombre']} | Precio: {p['precio']} | Cantidad: {p['cantidad']}")
+        print("-" * 50)
+        
 
 
 
@@ -22,7 +25,7 @@ def buscar_producto(inventario, nombre):
 
 
 
-#Actualizar un producto exis}tente
+#Actualizar un producto existente
 def actualizar_producto(inventario, nombre, nuevo_precio=None, nueva_cantidad=None):
     producto = buscar_producto(inventario, nombre)
     if producto:
@@ -49,14 +52,20 @@ def calcular_estadisticas(inventario):
     if not inventario:
         return {}
 
+    print("-" * 190)
     unidades_totales = sum(p['cantidad'] for p in inventario)
     valor_total = sum(p['precio'] * p['cantidad'] for p in inventario)
     producto_mas_caro = max(inventario, key=lambda x: x['precio'])
     producto_mayor_stock = max(inventario, key=lambda x: x['cantidad'])
-
+    
     return {
         "unidades_totales": unidades_totales,
         "valor_total": valor_total,
         "producto_mas_caro": producto_mas_caro,
         "producto_mayor_stock": producto_mayor_stock
+        
+
+
+
+
     }

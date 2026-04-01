@@ -26,7 +26,7 @@ def main():
 
         if opcion == '1':
             nombre = input("ingresar nombre producto: ")
-            precio = float(input("Precio: "))
+            precio = int(input("Precio: "))
             cantidad = int(input("Cantidad: "))
             agregar_producto(inventario, nombre, precio, cantidad)
 
